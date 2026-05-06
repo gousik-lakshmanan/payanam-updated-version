@@ -4,6 +4,10 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const dns = require('dns');
+
+// Set DNS servers to bypass local DNS resolution issues with MongoDB
+dns.setServers(['8.8.8.8', '8.8.4.4']);
 
 // Import Models
 const User = require('./models/User');
